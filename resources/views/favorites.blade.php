@@ -1,24 +1,15 @@
-{{--<html lang="en">--}}
-{{--<head>--}}
-{{--    <meta charset="UTF-8">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
-{{--    <title>index</title>--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<h1>Artists</h1>--}}
-{{--</body>--}}
-{{--</html>--}}
-{{--<p>Artist id: {{$id}}</p>--}}
 <x-app-layout>
-    <title>Artists</title>
-    <h1>Artists</h1>
+    <title>Favorites</title>
+    <h1>Favorites</h1>
     @if (Route::has('login'))
         <nav class="flex items-center justify-end gap-4">
             @auth
+                Je bent ingelogd
                 <a href="{{ route('logout') }}">
                     Log out
                 </a>
             @else
+                Je bent niet ingelogd
                 <a href="{{ route('login') }}">
                     Log in
                 </a>
@@ -26,4 +17,3 @@
     @endauth
     @endif
 </x-app-layout>
-

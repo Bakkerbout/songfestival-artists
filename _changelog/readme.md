@@ -1,8 +1,14 @@
 ## Changelog
 
+## 13-10-2025
+
+Ik heb ervoor gezorgd dat als je ingelogd bent je andere dingen ziet bij favorites.blade.php dan dat wanneer je niet
+ingelogd bent. <br>
+Ook heb ik aan homepage, artists en favorites een navbar toegevoegd met linkjes naar elkaar.
+
 ## 12-10-2025
 
-User stories:
+User stories: <br>
 Als Songfestival fan wil ik alle artiesten kunnen zien die voor een bepaald land hebben meegedaan, zodat ik snel kan
 vinden wie mijn favoriete land heeft vertegenwoordigd.
 

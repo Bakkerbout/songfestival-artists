@@ -26,13 +26,17 @@ Route::get('/contacttest', function () {
     ]);
 })->name('contact');
 
-Route::get('artists/{id}', function (int $id) {
-    return view('artists', compact('id'));
+Route::get('/artists', function () {
+    return view('artists');
 })->name('artists');
 
-Route::get('homepage/{id}', function (int $id) {
-    return view('homepage', compact('id'));
+Route::get('/homepage', function () {
+    return view('homepage');
 })->name('homepage');
+
+Route::get('/favorites', function () {
+    return view('favorites');
+})->name('favorites');
 
 Route::resource('artists', ArtistController::class);
 
