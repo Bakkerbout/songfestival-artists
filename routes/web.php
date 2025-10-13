@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/contacttest', function () {
+    $welcomeText = "Hi";
+    $company = 'Hogeschool Rotterdam';
+    return view('contact', compact('welcomeText'), [
+        'company' => $company
+    ]);
+})->name('contact');
+
+Route::get('artists/{id}', function (int $id) {
+    return view('artists', compact('id'));
+})->name('artists');
+
+Route::get('homepage/{id}', function (int $id) {
+    return view('homepage', compact('id'));
+})->name('homepage');
+
+Route::resource('artists', ArtistController::class);
+
+require __DIR__ . '/auth.php';
