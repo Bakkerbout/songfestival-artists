@@ -1,29 +1,10 @@
-{{--<html lang="en">--}}
-{{--<head>--}}
-{{--    <meta charset="UTF-8">--}}
-{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
-{{--    <title>index</title>--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<h1>Artists</h1>--}}
-{{--</body>--}}
-{{--</html>--}}
-{{--<p>Artist id: {{$id}}</p>--}}
 <x-app-layout>
-    <title>Artists</title>
     <h1>Artists</h1>
-    @if (Route::has('login'))
-        <nav class="flex items-center justify-end gap-4">
-            @auth
-                <a href="{{ route('logout') }}">
-                    Log out
-                </a>
-            @else
-                <a href="{{ route('login') }}">
-                    Log in
-                </a>
-        </nav>
-    @endauth
-    @endif
+    <a href="{{ route('artists.create') }}">Create</a>
+    <ul>
+        @foreach($artists as $artist)
+            <li><a href="{{route('artists.show', $artist)}}"> {{$artist->name}}</a></li>
+        @endforeach
+    </ul>
 </x-app-layout>
 

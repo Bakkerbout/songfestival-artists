@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,26 +19,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/contacttest', function () {
-    $welcomeText = "Hi";
-    $company = 'Hogeschool Rotterdam';
-    return view('contact', compact('welcomeText'), [
-        'company' => $company
-    ]);
-})->name('contact');
-
-Route::get('/artists', function () {
-    return view('artists');
-})->name('artists');
-
 Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
 
-Route::get('/favorites', function () {
-    return view('favorites');
-})->name('favorites');
-
 Route::resource('artists', ArtistController::class);
+
+Route::resource('favorite', FavoriteController::class);
 
 require __DIR__ . '/auth.php';

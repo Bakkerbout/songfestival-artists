@@ -1,8 +1,9 @@
 <x-app-layout>
-    <title>Homepage</title>
-    <h1>Homepage</h1>
+    <title>Favorites</title>
+    <h1>Favorites</h1>
     @if (Route::has('login'))
         @auth
+            Je bent ingelogd
             <a href="{{ route('logout') }}">
                 Log out
             </a>
@@ -14,4 +15,3 @@
         @endauth
     @endif
 </x-app-layout>
-

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artist;
+use App\Models\Country;
+use http\Message;
 use Illuminate\Http\Request;
+use function Laravel\Prompts\error;
 
 class ArtistController extends Controller
 {
@@ -11,7 +15,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        return view('artists.index');
+        $artists = Artist::all();
+        return view('artists.index', compact('artists'));
     }
 
     /**
@@ -19,7 +24,9 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        //
+        $countries = Country::all();
+        return view('artists.create', compact('countries'));
+//        return view('artists.create');
     }
 
     /**
@@ -27,21 +34,37 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string'],
+            'song' => ['required', 'string'],
+            'final_position' => ['required', 'integer', 'min:1', 'max:50'],
+            'year' => ['required', 'integer', 'min:1956', 'max:2026'],
+            'country_id' => ['required', 'exists:countries,id']
+        ]);
+        $artist = new Artist();
+        $artist->name = $request->input('name');
+        $artist->song = $request->input('song');
+        $artist->final_position = $request->input('final_position');
+        $artist->year = $request->input('year');
+        $artist->country_id = $request->input('country_id');
+
+        $artist->save();
+        return redirect()->route('artists.index')->with('success', 'Artist added');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Artist $artist)
     {
-        //
+        return view('artists.show', compact('artist'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Artist $artist)
     {
         //
     }
@@ -49,7 +72,7 @@ class ArtistController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Artist $artist)
     {
         //
     }

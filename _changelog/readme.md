@@ -1,10 +1,20 @@
 ## Changelog
 
+## 15-10-2025
+
+Vandaag heb ik ervoor gezorgd dat je via een formulier een artiest kan toevoegen. Ook is er nu een verbinding tussen de
+countries tabel en artists. Je kan nu een nieuwe artiest toevoegen waarbij je ook een land kan toevoegen.
+
+## 14-10-2025
+
+Ik heb aan de database gewerkt en geleerd hoe die werkt. Hierbij heb een artists tabel gemaakt en ook heb ik een model
+gemaakt. De artiesten worden nu ook uit de database gehaald en in de view getoond.
+
 ## 13-10-2025
 
 Ik heb ervoor gezorgd dat als je ingelogd bent je andere dingen ziet bij favorites.blade.php dan dat wanneer je niet
 ingelogd bent. <br>
-Ook heb ik aan homepage, artists en favorites een navbar toegevoegd met linkjes naar elkaar.
+Ook heb ik aan de homepage, artists en favorites een navbar toegevoegd met linkjes naar elkaar.
 
 ## 12-10-2025
 
