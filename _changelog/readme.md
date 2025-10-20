@@ -2,7 +2,10 @@
 
 ## 20-10-2025
 
-Ik heb vandaag het uiterlijk van de artist pagina gemaakt. Ook heb ik de css voor een artiest toevoegen aangepast.
+Vandaag heb ik het uiterlijk van de artist pagina gemaakt. Ook heb ik de css voor een artiest toevoegen aangepast.
+<br>Ik heb er voor gezorgd dat wanneer je niet ingelogd bent je niet naar de favorites en create pagina kan gaan.
+<br>Ook heb ik vandaag gemaakt dat wanneer je op de welcome page zit je nu een goede tekst hebt die bij mijn website
+past.
 
 ## 15-10-2025
 

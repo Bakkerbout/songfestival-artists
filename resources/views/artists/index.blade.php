@@ -2,7 +2,6 @@
     <x-slot name="header">
         Artists
     </x-slot>
-    <a href="{{ route('artists.create') }}">Create</a>
     <p class="text-gray-700 mb-6">The total amount of artists found: {{ $artists->count() }}</p>
 
     <div class="mb-6 flex items-center space-x-2">
