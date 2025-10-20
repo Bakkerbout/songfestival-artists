@@ -2,7 +2,7 @@
 
 ## 20-10-2025
 
-Ik heb vandaag het uiterlijk van de artist pagina gemaakt.
+Ik heb vandaag het uiterlijk van de artist pagina gemaakt. Ook heb ik de css voor een artiest toevoegen aangepast.
 
 ## 15-10-2025
 
