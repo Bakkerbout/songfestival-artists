@@ -5,7 +5,7 @@
 Vandaag heb ik het uiterlijk van de artist pagina gemaakt. Ook heb ik de css voor een artiest toevoegen aangepast.
 <br>Ik heb er voor gezorgd dat wanneer je niet ingelogd bent je niet naar de favorites en create pagina kan gaan.
 <br>Ook heb ik vandaag gemaakt dat wanneer je op de welcome page zit je nu een goede tekst hebt die bij mijn website
-past.
+past. De css van de login en register pagina heb ik ook aangepast naar mijn website.
 
 ## 15-10-2025
 
