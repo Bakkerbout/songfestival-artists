@@ -1,5 +1,9 @@
 ## Changelog
 
+## 20-10-2025
+
+Ik heb vandaag het uiterlijk van de artist pagina gemaakt.
+
 ## 15-10-2025
 
 Vandaag heb ik ervoor gezorgd dat je via een formulier een artiest kan toevoegen. Ook is er nu een verbinding tussen de

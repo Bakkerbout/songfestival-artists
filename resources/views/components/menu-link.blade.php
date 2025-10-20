@@ -1,3 +1,3 @@
 @props(['active' => false])
 
-<a class="text-pink-400 @if($active) underline @endif" {{$attributes}}>{{$slot}}</a>
+<a class="text-gray-300  hover:text-white @if($active)text-white underline @endif" {{$attributes}}>{{$slot}}</a>
