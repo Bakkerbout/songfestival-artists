@@ -15,12 +15,6 @@ class ArtistController extends Controller
      */
     public function index(Request $request)
     {
-        $years = Artist::select('year')->distinct()->orderBy('year', 'desc')->pluck('year');
-
-        $countries = Country::orderBy('name')->get();
-
-        $finalPositions = range(1, 50);
-
         $query = Artist::query();
 
         if ($request->filled('year')) {
@@ -34,8 +28,18 @@ class ArtistController extends Controller
         if ($request->filled('final_position')) {
             $query->where('final_position', $request->final_position);
         }
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('song', 'like', "%{$search}%");
+            });
+        }
 
         $artists = $query->get();
+        $countries = Country::all();
+        $years = Artist::select('year')->distinct()->orderBy('year')->pluck('year');
+        $finalPositions = range(1, 50);
 
         return view('artists.index', compact('artists', 'years', 'countries', 'finalPositions'));
     }

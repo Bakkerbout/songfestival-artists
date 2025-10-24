@@ -33,10 +33,14 @@
                     </option>
                 @endforeach
             </select>
-        </form>
 
-        <input type="text" placeholder="Search artist or song" class="border rounded px-3 py-1 ml-2"/>
-        <button class="bg-blue-300 text-black px-3 py-1 rounded hover:bg-blue-900 hover:text-white">Search</button>
+            <input type="text" name="search" placeholder="Search artist or song"
+                   value="{{ request('search') }}"
+                   class="border rounded py-1"/>
+            <button type="submit" class="bg-blue-300 text-black px-3 py-1 rounded hover:bg-blue-900 hover:text-white">
+                Search
+            </button>
+        </form>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

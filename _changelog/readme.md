@@ -8,6 +8,7 @@ ik het jaar erbij wilde zetten.
 moest staan wat niet handig is. Het was eerst wel een beetje ingewikkeld, maar omdat ik al meerdere dingen had gedaan
 die er wel een beetje op leken, vooral op de create page was het minder ingewikkeld en uiteindelijk ben ik er best snel
 uitgekomen.
+<br>Ook heb ik ervoor gezorgd dat je nu op artiest en nummer kan zoeken via de zoekbalk.
 
 ## 20-10-2025
 
