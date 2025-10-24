@@ -4,6 +4,10 @@
 
 Ik heb vandaag aan het zoeken/filteren gewerkt. Eerst heb ik nog wat css aangepast bij de index pagina van artists omdat
 ik het jaar erbij wilde zetten.
+<br>Bij het filteren ben ik voor dropdown menu's gegaan, omdat anders elk country, year en final position op een rij
+moest staan wat niet handig is. Het was eerst wel een beetje ingewikkeld, maar omdat ik al meerdere dingen had gedaan
+die er wel een beetje op leken, vooral op de create page was het minder ingewikkeld en uiteindelijk ben ik er best snel
+uitgekomen.
 
 ## 20-10-2025
 
@@ -25,13 +29,13 @@ gemaakt. De artiesten worden nu ook uit de database gehaald en in de view getoon
 ## 13-10-2025
 
 Ik heb ervoor gezorgd dat als je ingelogd bent je andere dingen ziet bij favorites.blade.php dan dat wanneer je niet
-ingelogd bent. <br>
-Ook heb ik aan de homepage, artists en favorites een navbar toegevoegd met linkjes naar elkaar.
+ingelogd bent.
+<br>Ook heb ik aan de homepage, artists en favorites een navbar toegevoegd met linkjes naar elkaar.
 
 ## 12-10-2025
 
-User stories: <br>
-Als Songfestival fan wil ik alle artiesten kunnen zien die voor een bepaald land hebben meegedaan, zodat ik snel kan
+User stories:
+<br>Als Songfestival fan wil ik alle artiesten kunnen zien die voor een bepaald land hebben meegedaan, zodat ik snel kan
 vinden wie mijn favoriete land heeft vertegenwoordigd.
 
 Als Songfestival fan wil ik alle artiesten kunnen zien die in een bepaald jaar hebben meegedaan, zodat ik kan terugzien

@@ -13,10 +13,31 @@ class ArtistController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $artists = Artist::all();
-        return view('artists.index', compact('artists'));
+        $years = Artist::select('year')->distinct()->orderBy('year', 'desc')->pluck('year');
+
+        $countries = Country::orderBy('name')->get();
+
+        $finalPositions = range(1, 50);
+
+        $query = Artist::query();
+
+        if ($request->filled('year')) {
+            $query->where('year', $request->year);
+        }
+
+        if ($request->filled('country')) {
+            $query->where('country_id', $request->country);
+        }
+
+        if ($request->filled('final_position')) {
+            $query->where('final_position', $request->final_position);
+        }
+
+        $artists = $query->get();
+
+        return view('artists.index', compact('artists', 'years', 'countries', 'finalPositions'));
     }
 
     /**
@@ -26,7 +47,6 @@ class ArtistController extends Controller
     {
         $countries = Country::all();
         return view('artists.create', compact('countries'));
-//        return view('artists.create');
     }
 
     /**
@@ -50,7 +70,6 @@ class ArtistController extends Controller
 
         $artist->save();
         return redirect()->route('artists.index')->with('success', 'Artist added');
-
     }
 
     /**

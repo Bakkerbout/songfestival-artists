@@ -6,10 +6,34 @@
 
     <div class="mb-6 flex items-center space-x-2">
         <span class="text-black font-medium">Filter:</span>
-        <button class="bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-3 py-1 rounded">Country</button>
-        <button class="bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-3 py-1 rounded">Year</button>
-        <button class="bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-3 py-1 rounded">Final position
-        </button>
+        <form method="GET" action="{{ route('artists.index') }}">
+            <select class="py-1 rounded" name="country" onchange="this.form.submit()">
+                <option value="">All countries</option>
+                @foreach($countries as $country)
+                    <option value="{{ $country->id }}" {{ request('country') == $country->id ? 'selected' : '' }}>
+                        {{ $country->name }}
+                    </option>
+                @endforeach
+            </select>
+
+            <select class="py-1 rounded" name="year" onchange="this.form.submit()">
+                <option value="">All years</option>
+                @foreach($years as $year)
+                    <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                        {{ $year }}
+                    </option>
+                @endforeach
+            </select>
+
+            <select class="py-1 rounded" name="final_position" onchange="this.form.submit()">
+                <option value="">All positions</option>
+                @foreach($finalPositions as $position)
+                    <option value="{{ $position }}" {{ request('final_position') == $position ? 'selected' : '' }}>
+                        {{ $position }}
+                    </option>
+                @endforeach
+            </select>
+        </form>
 
         <input type="text" placeholder="Search artist or song" class="border rounded px-3 py-1 ml-2"/>
         <button class="bg-blue-300 text-black px-3 py-1 rounded hover:bg-blue-900 hover:text-white">Search</button>
@@ -20,6 +44,7 @@
             <div class="bg-white shadow-md rounded-lg overflow-hidden">
                 {{--                <img src="{{ $artist->image_url }}" alt="{{ $artist->song }}" class="w-full h-48 object-cover">--}}
                 <div class="p-4">
+                    {{--                    Misschien nog een image (vlag) van het land toevoegen??--}}
                     <h2 class="text-lg font-semibold text-black">{{ $artist->name }}</h2>
                     <p class="text-sm text-black mt-2">{{ Str::limit($artist->song, 80) }}</p>
                     <div class="flex items-center space-x-52">
