@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        Artists
+        Songfestival Artists
     </x-slot>
     <p class="text-gray-700 mb-6">The total amount of artists found: {{ $artists->count() }}</p>
 
@@ -22,10 +22,14 @@
                 <div class="p-4">
                     <h2 class="text-lg font-semibold text-black">{{ $artist->name }}</h2>
                     <p class="text-sm text-black mt-2">{{ Str::limit($artist->song, 80) }}</p>
-                    <a href="{{ route('artists.show', $artist) }}"
-                       class=" inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-3 py-1 rounded">
-                        See details
-                    </a>
+                    <div class="flex items-center space-x-52">
+
+                        <a href="{{ route('artists.show', $artist) }}"
+                           class=" inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-3 py-1 rounded">
+                            See details
+                        </a>
+                        <p class="flex text-base text-black">{{ $artist->year }}</p>
+                    </div>
                 </div>
             </div>
         @endforeach

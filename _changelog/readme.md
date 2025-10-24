@@ -1,5 +1,10 @@
 ## Changelog
 
+## 24-10-2025
+
+Ik heb vandaag aan het zoeken/filteren gewerkt. Eerst heb ik nog wat css aangepast bij de index pagina van artists omdat
+ik het jaar erbij wilde zetten.
+
 ## 20-10-2025
 
 Vandaag heb ik het uiterlijk van de artist pagina gemaakt. Ook heb ik de css voor een artiest toevoegen aangepast.
