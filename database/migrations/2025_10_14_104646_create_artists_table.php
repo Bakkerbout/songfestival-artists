@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->integer('final_position');
             $table->smallInteger('year');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
+            $table->string('image');
             $table->timestamps();
         });
     }

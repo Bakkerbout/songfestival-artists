@@ -6,7 +6,7 @@
         @auth
             <div class="flex justify-center items-center ">
                 <div class="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg">
-                    <form method="POST" action="{{ route('artists.store') }}">
+                    <form method="POST" action="{{ route('artists.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                             <label for="name" class="block mb-1 font-medium">Artist Name:</label>
@@ -50,6 +50,15 @@
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="image" class="block mb-1 font-medium">Image:</label>
+                            <input type="file" id="image" name="image" accept="image/" value="{{old('image')}}"
+                                   class="border rounded p-2">
+                            @error('image')
+                            <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+                            @enderror
                         </div>
 
                         <div>

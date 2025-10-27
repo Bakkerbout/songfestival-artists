@@ -1,5 +1,9 @@
 ## Changelog
 
+## 27-10-2025
+
+Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte.
+
 ## 24-10-2025
 
 Ik heb vandaag aan het zoeken/filteren gewerkt. Eerst heb ik nog wat css aangepast bij de index pagina van artists omdat

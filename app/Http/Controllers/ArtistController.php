@@ -63,7 +63,8 @@ class ArtistController extends Controller
             'song' => ['required', 'string'],
             'final_position' => ['required', 'integer', 'min:1', 'max:50'],
             'year' => ['required', 'integer', 'min:1956', 'max:2026'],
-            'country_id' => ['required', 'exists:countries,id']
+            'country_id' => ['required', 'exists:countries,id'],
+            'image' => ['required', 'image'],
         ]);
         $artist = new Artist();
         $artist->name = $request->input('name');
@@ -71,6 +72,9 @@ class ArtistController extends Controller
         $artist->final_position = $request->input('final_position');
         $artist->year = $request->input('year');
         $artist->country_id = $request->input('country_id');
+
+        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
+        $artist->image = $nameOfFile;
 
         $artist->save();
         return redirect()->route('artists.index')->with('success', 'Artist added');
