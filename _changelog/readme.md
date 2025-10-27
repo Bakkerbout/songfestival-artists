@@ -4,6 +4,7 @@
 
 Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte. Ik ben ook
 begonnen met de edit pagina.
+<br>Ik ben thuis verder gegaan en heb ervoor gezorgd dat de edit pagina van artiesten werkt.
 
 ## 24-10-2025
 

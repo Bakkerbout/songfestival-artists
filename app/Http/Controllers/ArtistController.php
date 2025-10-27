@@ -93,14 +93,8 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-//        return view('artists.create', compact('artist'));
-//        $artists = $query->get();
         $countries = Country::all();
-//        $years = Artist::select('year')->distinct()->orderBy('year')->pluck('year');
-//        $finalPositions = range(1, 50);
-
         return view('artists.edit', compact('artist', 'countries'));
-
     }
 
     /**
@@ -108,7 +102,28 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        //
+        $request->validate([
+
+            'name' => ['required', 'string'],
+            'song' => ['required', 'string'],
+            'final_position' => ['required', 'integer', 'min:1', 'max:50'],
+            'year' => ['required', 'integer', 'min:1956', 'max:2026'],
+            'country_id' => ['required', 'exists:countries,id'],
+            'image' => ['nullable', 'image'],
+        ]);
+
+        $data = $request->only(['name', 'song', 'final_position', 'year', 'country_id']);
+
+        if ($request->hasFile('image')) {
+            if ($artist->image && \Storage::disk('public')->exists($artist->image)) {
+                \Storage::disk('public')->delete($artist->image);
+            }
+
+            $data['image'] = $request->file('image')->store('artists', 'public');
+        }
+        $artist->update($data);
+
+        return redirect()->route('artists.index')->with('success', 'Artist updated');
     }
 
     /**
