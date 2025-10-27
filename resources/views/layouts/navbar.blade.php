@@ -16,7 +16,12 @@
                     <x-menu-link href="{{ route('artists.create') }}" :active="Route::is('artists.create')">
                         Create Artist
                     </x-menu-link>
-                @else
+
+                    @if (Auth::user()->role == 1)
+                        <x-menu-link href="{{ route('admin.index') }}" :active="Route::is('admin.index')">
+                            Admin Dashboard
+                        </x-menu-link>
+                    @endif
                 @endauth
             @endif
         </div>

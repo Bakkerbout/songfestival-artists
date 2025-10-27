@@ -4,7 +4,8 @@
 
 Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte. Ik ben ook
 begonnen met de edit pagina.
-<br>Ik ben thuis verder gegaan en heb ervoor gezorgd dat de edit pagina van artiesten werkt.
+<br>Ik ben thuis verder gegaan en heb ervoor gezorgd dat de edit pagina van artiesten werkt. Ook heb ik ervoor gezorgd
+dat je alleen als admin op het admin dashboard terecht kan komen en anders krijg je een 403 foutmelding.
 
 ## 24-10-2025
 
