@@ -2,7 +2,8 @@
 
 ## 27-10-2025
 
-Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte.
+Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte. Ik ben ook
+begonnen met de edit pagina.
 
 ## 24-10-2025
 

@@ -19,14 +19,6 @@
                 @else
                 @endauth
             @endif
-            @if (Route::has(''))
-                @auth
-                    <x-menu-link href="{{ route('artists.create') }}" :active="Route::is('artists.create')">
-                        Create Artist
-                    </x-menu-link>
-                @else
-                @endauth
-            @endif
         </div>
         <div class="flex items-center space-x-4">
             @auth

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
@@ -26,5 +27,7 @@ Route::get('/homepage', function () {
 Route::resource('artists', ArtistController::class);
 
 Route::resource('favorite', FavoriteController::class);
+
+Route::resource('admin', AdminController::class);
 
 require __DIR__ . '/auth.php';

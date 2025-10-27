@@ -93,7 +93,14 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        //
+//        return view('artists.create', compact('artist'));
+//        $artists = $query->get();
+        $countries = Country::all();
+//        $years = Artist::select('year')->distinct()->orderBy('year')->pluck('year');
+//        $finalPositions = range(1, 50);
+
+        return view('artists.edit', compact('artist', 'countries'));
+
     }
 
     /**
