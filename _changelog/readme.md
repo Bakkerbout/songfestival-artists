@@ -6,6 +6,7 @@ Ik ben vandaag bezig geweest met het maken van de admin dashboard. Ik heb eerst 
 als je een artist aanmaakt, zodat ik die op de admin page kan tonen. Je kan nu de status op published zetten of
 unpublished waardoor die niet meer te zien is op de index page, ook kan je hem niet editten en de details zien als die
 op unpublished staat.
+<br>Ook kan de admin nu artists verwijderen uit de database.
 
 ## 27-10-2025
 

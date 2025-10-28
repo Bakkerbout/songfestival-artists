@@ -139,8 +139,17 @@ class ArtistController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $artist = Artist::findOrFail($id);
+
+        if ($artist->image && \Storage::disk('public')->exists($artist->image)) {
+            \Storage::disk('public')->delete($artist->image);
+        }
+
+        $artist->delete();
+
+        return redirect()->route('artists.index')->with('success', 'Artist deleted successfully.');
     }
+
 
     public function toggleStatus(Artist $artist)
     {

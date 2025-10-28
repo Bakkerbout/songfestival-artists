@@ -24,7 +24,7 @@
                 to this site can trace the story, appreciating the artistry and dedication behind every note
                 and performance.
                 <br><br>
-                In a world where music is both personal and universal, Son festival shines as a showcase of
+                In a world where music is both personal and universal, Songfestival shines as a showcase of
                 imagination, talent, and cultural expression. This website captures that spirit, offering fans a way to
                 explore, celebrate, and relive the moments that make each Songfestival unforgettable.
             </div>
