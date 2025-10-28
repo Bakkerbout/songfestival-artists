@@ -6,6 +6,7 @@ use App\Models\Artist;
 use App\Models\Country;
 use http\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function Laravel\Prompts\error;
 
 class ArtistController extends Controller
@@ -75,6 +76,8 @@ class ArtistController extends Controller
 
         $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
         $artist->image = $nameOfFile;
+
+        $artist->user_id = Auth::id();
 
         $artist->save();
         return redirect()->route('artists.index')->with('success', 'Artist added');

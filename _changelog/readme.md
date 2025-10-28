@@ -1,5 +1,10 @@
 ## Changelog
 
+## 28-10-2025
+
+Ik ben vandaag bezig geweest met het maken van de admin dashboard. Ik heb eerst ervoor gezorgd dat een user_id meegaat
+als je een artist aanmaakt, zodat ik die op de admin page kan tonen.
+
 ## 27-10-2025
 
 Vandaag heb ik ervoor gezorgd dat je afbeeldingen ziet en ook ben ik begonnen aan het admin gedeelte. Ik ben ook

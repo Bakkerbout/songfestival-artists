@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->smallInteger('year');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
             $table->string('image');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

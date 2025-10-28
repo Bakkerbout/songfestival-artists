@@ -20,4 +20,9 @@ class Artist extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
