@@ -7,6 +7,7 @@ als je een artist aanmaakt, zodat ik die op de admin page kan tonen. Je kan nu d
 unpublished waardoor die niet meer te zien is op de index page, ook kan je hem niet editten en de details zien als die
 op unpublished staat.
 <br>Ook kan de admin nu artists verwijderen uit de database.
+<br>Er is nu ook een profile pagina.
 
 ## 27-10-2025
 

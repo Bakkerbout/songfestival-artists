@@ -27,7 +27,7 @@
         </div>
         <div class="flex items-center space-x-4">
             @auth
-                <span class="text-white">{{ Auth::user()->name }}</span>
+                <a href="{{ route('profile.edit') }}" class="text-white">{{ Auth::user()->name }}</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="text-red-500 hover:underline">Logout</button>
