@@ -27,11 +27,17 @@
                         <td class="py-3 px-4">{{ $artist->created_at->format('d-m-Y') }}</td>
                         <td class="py-3 px-4">{{ $artist->updated_at->format('d-m-Y') }}</td>
                         <td class="py-3 px-4 text-center">
-                                <span class="px-2 py-1 text-xs font-semibold rounded-full
-                                    {{ $artist->status === 'active' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-red-800' }}">
-                                    {{ ucfirst($artist->status) }}
-                                </span>
+                            <form action="{{ route('artists.toggleStatus', $artist->id) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit"
+                                        class="px-2 py-1 text-xs font-semibold rounded-full
+                    {{ $artist->status == 1 ? 'bg-blue-100 text-black' : 'bg-blue-800 text-white' }}">
+                                    {{ $artist->status == 1 ? 'Published' : 'Unpublished' }}
+                                </button>
+                            </form>
                         </td>
+
                         <td class="py-3 px-4 text-center">
                             <a href="{{ route('artists.edit', $artist->id) }}"
                                class="text-blue-600 hover:underline">Edit</a>

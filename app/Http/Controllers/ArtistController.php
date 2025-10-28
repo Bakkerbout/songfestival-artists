@@ -16,7 +16,7 @@ class ArtistController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Artist::query();
+        $query = Artist::where('status', true);
 
         if ($request->filled('year')) {
             $query->where('year', $request->year);
@@ -66,6 +66,7 @@ class ArtistController extends Controller
             'year' => ['required', 'integer', 'min:1956', 'max:2026'],
             'country_id' => ['required', 'exists:countries,id'],
             'image' => ['required', 'image'],
+            'status' => ['nullable'],
         ]);
         $artist = new Artist();
         $artist->name = $request->input('name');
@@ -73,11 +74,11 @@ class ArtistController extends Controller
         $artist->final_position = $request->input('final_position');
         $artist->year = $request->input('year');
         $artist->country_id = $request->input('country_id');
+        $artist->status = $request->input('status', 1); // ✅ standaard 1
+        $artist->user_id = Auth::id();
 
         $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
         $artist->image = $nameOfFile;
-
-        $artist->user_id = Auth::id();
 
         $artist->save();
         return redirect()->route('artists.index')->with('success', 'Artist added');
@@ -86,16 +87,20 @@ class ArtistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Artist $artist)
+    public function show(string $id)
     {
+        $artist = Artist::where('id', $id)->where('status', true)->firstOrFail();
+
         return view('artists.show', compact('artist'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Artist $artist)
+    public function edit(string $id)
     {
+        $artist = Artist::where('id', $id)->where('status', true)->firstOrFail();
+
         $countries = Country::all();
         return view('artists.edit', compact('artist', 'countries'));
     }
@@ -136,4 +141,13 @@ class ArtistController extends Controller
     {
         //
     }
+
+    public function toggleStatus(Artist $artist)
+    {
+        $artist->status = $artist->status == 1 ? 0 : 1;
+        $artist->save();
+
+        return redirect()->back()->with('success', 'Artist status updated!');
+    }
+
 }

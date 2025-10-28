@@ -30,4 +30,7 @@ Route::resource('favorite', FavoriteController::class);
 
 Route::resource('admin', AdminController::class);
 
+Route::patch('/artists/{artist}/toggle-status', [ArtistController::class, 'toggleStatus'])->name('artists.toggleStatus');
+
+
 require __DIR__ . '/auth.php';

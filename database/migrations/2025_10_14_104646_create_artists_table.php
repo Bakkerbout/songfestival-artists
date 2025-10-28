@@ -12,13 +12,14 @@ return new class extends Migration {
     {
         Schema::create('artists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->smallInteger('status');
             $table->string('name');
             $table->string('song');
             $table->integer('final_position');
             $table->smallInteger('year');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
             $table->string('image');
-            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
