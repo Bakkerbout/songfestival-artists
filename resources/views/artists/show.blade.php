@@ -15,13 +15,21 @@
                  class="w-full h-96 object-cover rounded-lg shadow-md">
         </div>
     </div>
-    @if (Route::has('login'))
-        @auth
-            <a href="{{ route('artists.edit' , $artist->id) }}"
+    {{--    @if (Route::has('login'))--}}
+    {{--        @auth--}}
+    {{--            <a href="{{ route('artists.edit' , $artist->id) }}"--}}
+    {{--               class="inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-72 py-1 rounded">--}}
+    {{--                Edit--}}
+    {{--            </a>--}}
+    {{--        @else--}}
+    {{--        @endauth--}}
+    {{--    @endif--}}
+    @auth
+        @if(Auth::id() === $artist->user_id)
+            <a href="{{ route('artists.edit', $artist->id) }}"
                class="inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-72 py-1 rounded">
                 Edit
             </a>
-        @else
-        @endauth
-    @endif
+        @endif
+    @endauth
 </x-app-layout>

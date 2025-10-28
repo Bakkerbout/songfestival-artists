@@ -99,7 +99,10 @@ class ArtistController extends Controller
      */
     public function edit(string $id)
     {
-        $artist = Artist::where('id', $id)->where('status', true)->firstOrFail();
+        $artist = Artist::where('id', $id)
+            ->where('status', true)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
         $countries = Country::all();
         return view('artists.edit', compact('artist', 'countries'));
@@ -110,6 +113,9 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
+        if ($artist->user_id !== Auth::id()) {
+            abort(403, 'Unauthorized action.');
+        }
         $request->validate([
 
             'name' => ['required', 'string'],
