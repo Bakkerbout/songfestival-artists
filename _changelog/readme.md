@@ -6,7 +6,8 @@ Ik vandaag heb ik aan de diepere validatie gewerkt. Ik heb ervoor gezorgd dat wa
 aangemaakt je dan pas een artist kan editten. Toen ik aan het checken was of ik ook een user kon deleten kwam ik
 erachter dat er geen ondelete cascade bij mij database stond dus heb ik die ook nog moeten toevoegen. Ik heb er ook voor
 gezorgd dat je bij het filteren alleen uit de eindposities kan kiezen die zijn ingevoerd. De admin kan nu ook alle
-artists die door iemand anders zijn aangemaakt editten en ook als ze unpublished zijn.
+artists die door iemand anders zijn aangemaakt editten en ook als ze unpublished zijn. Ook ben ik begonnen met de top 10
+van OWASP te checken eerst heb ik stap 1 gedaan.
 
 ## 28-10-2025
 

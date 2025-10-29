@@ -49,7 +49,6 @@
                 <img src="{{ asset('storage/' . $artist->image) }}" alt="{{ $artist->name }}"
                      class="w-full h-48 object-cover">
                 <div class="p-4">
-                    {{--                    Misschien nog een image (vlag) van het land toevoegen??--}}
                     <h2 class="text-lg font-semibold text-black">{{ $artist->name }}</h2>
                     <p class="text-sm text-black mt-2">{{ Str::limit($artist->song, 80) }}</p>
                     <div class="flex items-center space-x-52">

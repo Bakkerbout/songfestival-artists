@@ -118,12 +118,6 @@ class ArtistController extends Controller
 
         $artist = $artistQuery->firstOrFail();
 
-//        $artist = Artist::where('id', $id)
-//            ->where('status', true)
-////            ->where('user_id', Auth::id())
-//            ->where('user_id', $user->id)
-//            ->firstOrFail();
-
         $countries = Country::all();
         return view('artists.edit', compact('artist', 'countries'));
     }
@@ -136,9 +130,6 @@ class ArtistController extends Controller
 
         $user = Auth::user();
 
-//        if ($artist->user_id !== Auth::id()) {
-//            abort(403, 'Unauthorized action.');
-//        }
         if ($user->role !== 1 && $artist->user_id !== $user->id) {
             abort(403, 'Unauthorized action.');
         }
@@ -171,7 +162,13 @@ class ArtistController extends Controller
      */
     public function destroy(string $id)
     {
+        $user = Auth::user();
+
         $artist = Artist::findOrFail($id);
+
+        if ($user->role !== 1 && $artist->user_id !== $user->id) {
+            abort(403, 'Unauthorized action.');
+        }
 
         if ($artist->image && \Storage::disk('public')->exists($artist->image)) {
             \Storage::disk('public')->delete($artist->image);
@@ -182,13 +179,16 @@ class ArtistController extends Controller
         return redirect()->route('artists.index')->with('success', 'Artist deleted successfully.');
     }
 
-
     public function toggleStatus(Artist $artist)
     {
+        $user = Auth::user();
+        if ($user->role !== 1 && $artist->user_id !== $user->id) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $artist->status = $artist->status == 1 ? 0 : 1;
         $artist->save();
 
         return redirect()->back()->with('success', 'Artist status updated!');
     }
-
 }

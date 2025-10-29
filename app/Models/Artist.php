@@ -10,8 +10,7 @@ class Artist extends Model
     /**
      * @var int|mixed|string|null
      */
-//    public mixed $user_id;
-    protected $table = 'artists'; // Voeg dit toe
+    protected $table = 'artists';
 
     protected $fillable = [
         'name',
