@@ -40,7 +40,7 @@ class ArtistController extends Controller
         $artists = $query->get();
         $countries = Country::all();
         $years = Artist::select('year')->distinct()->orderBy('year')->pluck('year');
-        $finalPositions = range(1, 50);
+        $finalPositions = Artist::select('final_position')->distinct()->orderBy('final_position')->pluck('final_position');
 
         return view('artists.index', compact('artists', 'years', 'countries', 'finalPositions'));
     }
@@ -74,7 +74,7 @@ class ArtistController extends Controller
         $artist->final_position = $request->input('final_position');
         $artist->year = $request->input('year');
         $artist->country_id = $request->input('country_id');
-        $artist->status = $request->input('status', 1); // ✅ standaard 1
+        $artist->status = $request->input('status', 1);
         $artist->user_id = Auth::id();
 
         $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');

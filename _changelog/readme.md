@@ -4,7 +4,8 @@
 
 Ik vandaag heb ik aan de diepere validatie gewerkt. Ik heb ervoor gezorgd dat wanneer je drie keer een artist heb
 aangemaakt je dan pas een artist kan editten. Toen ik aan het checken was of ik ook een user kon deleten kwam ik
-erachter dat er geen ondelete cascade bij mij database stond dus heb ik die ook nog moeten toevoegen.
+erachter dat er geen ondelete cascade bij mij database stond dus heb ik die ook nog moeten toevoegen. Ik heb er ook voor
+gezorgd dat je bij het filteren alleen uit de eindposities kan kiezen die zijn ingevoerd.
 
 ## 28-10-2025
 
