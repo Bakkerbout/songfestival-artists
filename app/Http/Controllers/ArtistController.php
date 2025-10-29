@@ -102,18 +102,27 @@ class ArtistController extends Controller
     {
         $user = Auth::user();
 
-        $artistCount = Artist::where('user_id', $user->id)->count();
-
-        if ($artistCount < 3) {
-            return redirect()->route('artists.index')
-                ->with('error', 'You must have added at least 3 artists before you can edit an artist.');
+        if ($user->role !== 1) {
+            $artistCount = Artist::where('user_id', $user->id)->count();
+            if ($artistCount < 3) {
+                return redirect()->route('artists.index')
+                    ->with('error', 'You must have added at least 3 artists before you can edit an artist.');
+            }
         }
 
-        $artist = Artist::where('id', $id)
-            ->where('status', true)
-//            ->where('user_id', Auth::id())
-            ->where('user_id', $user->id)
-            ->firstOrFail();
+        $artistQuery = Artist::where('id', $id);
+
+        if ($user->role !== 1) {
+            $artistQuery->where('status', true)->where('user_id', $user->id);
+        }
+
+        $artist = $artistQuery->firstOrFail();
+
+//        $artist = Artist::where('id', $id)
+//            ->where('status', true)
+////            ->where('user_id', Auth::id())
+//            ->where('user_id', $user->id)
+//            ->firstOrFail();
 
         $countries = Country::all();
         return view('artists.edit', compact('artist', 'countries'));
@@ -124,7 +133,13 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-        if ($artist->user_id !== Auth::id()) {
+
+        $user = Auth::user();
+
+//        if ($artist->user_id !== Auth::id()) {
+//            abort(403, 'Unauthorized action.');
+//        }
+        if ($user->role !== 1 && $artist->user_id !== $user->id) {
             abort(403, 'Unauthorized action.');
         }
         $request->validate([
