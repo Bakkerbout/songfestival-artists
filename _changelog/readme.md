@@ -3,8 +3,8 @@
 ## 29-10-2025
 
 Ik vandaag heb ik aan de diepere validatie gewerkt. Ik heb ervoor gezorgd dat wanneer je drie keer een artist heb
-aangemaakt
-je dan pas een artist kan editten.
+aangemaakt je dan pas een artist kan editten. Toen ik aan het checken was of ik ook een user kon deleten kwam ik
+erachter dat er geen ondelete cascade bij mij database stond dus heb ik die ook nog moeten toevoegen.
 
 ## 28-10-2025
 
