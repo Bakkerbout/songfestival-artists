@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="header">
+        Admin Dashboard
+    </x-slot>
     <div class="p-6">
         <div class="overflow-x-auto bg-white shadow-md rounded-lg">
             <table class="min-w-full border border-gray-200">

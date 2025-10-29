@@ -91,7 +91,8 @@ class ArtistController extends Controller
     {
         $artist = Artist::where('id', $id)->where('status', true)->firstOrFail();
 
-        return view('artists.show', compact('artist'));
+        $userArtistCount = Artist::where('user_id', Auth::id())->count();
+        return view('artists.show', compact('artist', 'userArtistCount'));
     }
 
     /**
@@ -99,9 +100,19 @@ class ArtistController extends Controller
      */
     public function edit(string $id)
     {
+        $user = Auth::user();
+
+        $artistCount = Artist::where('user_id', $user->id)->count();
+
+        if ($artistCount < 3) {
+            return redirect()->route('artists.index')
+                ->with('error', 'You must have added at least 3 artists before you can edit an artist.');
+        }
+
         $artist = Artist::where('id', $id)
             ->where('status', true)
-            ->where('user_id', Auth::id())
+//            ->where('user_id', Auth::id())
+            ->where('user_id', $user->id)
             ->firstOrFail();
 
         $countries = Country::all();

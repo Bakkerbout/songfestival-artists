@@ -1,5 +1,11 @@
 ## Changelog
 
+## 29-10-2025
+
+Ik vandaag heb ik aan de diepere validatie gewerkt. Ik heb ervoor gezorgd dat wanneer je drie keer een artist heb
+aangemaakt
+je dan pas een artist kan editten.
+
 ## 28-10-2025
 
 Ik ben vandaag bezig geweest met het maken van de admin dashboard. Ik heb eerst ervoor gezorgd dat een user_id meegaat

@@ -15,21 +15,18 @@
                  class="w-full h-96 object-cover rounded-lg shadow-md">
         </div>
     </div>
-    {{--    @if (Route::has('login'))--}}
-    {{--        @auth--}}
-    {{--            <a href="{{ route('artists.edit' , $artist->id) }}"--}}
-    {{--               class="inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-72 py-1 rounded">--}}
-    {{--                Edit--}}
-    {{--            </a>--}}
-    {{--        @else--}}
-    {{--        @endauth--}}
-    {{--    @endif--}}
     @auth
-        @if(Auth::id() === $artist->user_id)
+        @if(Auth::id() === $artist->user_id && $userArtistCount >= 3)
             <a href="{{ route('artists.edit', $artist->id) }}"
                class="inline-block mt-3 bg-blue-900 text-white hover:bg-blue-300 hover:text-black px-72 py-1 rounded">
                 Edit
             </a>
+        @endif
+
+        @if(Auth::id() === $artist->user_id && $userArtistCount < 3)
+            <div class="text-red-500 text-base">You must have added at least 3 artists before you can edit this
+                artist.
+            </div>
         @endif
     @endauth
 </x-app-layout>
