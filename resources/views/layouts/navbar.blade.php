@@ -9,9 +9,9 @@
             </x-menu-link>
             @if (Route::has('login'))
                 @auth
-                    <x-menu-link href="{{ route('favorite.index') }}" :active="Route::is('favorite.index')">
-                        Favorites
-                    </x-menu-link>
+                    {{--                    <x-menu-link href="{{ route('favorite.index') }}" :active="Route::is('favorite.index')">--}}
+                    {{--                        Favorites--}}
+                    {{--                    </x-menu-link>--}}
 
                     <x-menu-link href="{{ route('artists.create') }}" :active="Route::is('artists.create')">
                         Create Artist

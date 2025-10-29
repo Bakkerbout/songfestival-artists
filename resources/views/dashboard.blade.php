@@ -7,9 +7,8 @@
             <div class=" text-black">
                 Welcome to this website about Eurovision Songfestival, the ultimate hub for discovering the artists,
                 songs, and countries that make the stage come alive. Here, you can explore recent uploads from our
-                community, follow fan-favorite performances, and track the rankings that celebrate each song’s journey.
-                Creating entries is unlocked after 3 logins, and adding favorites is available once you’ve contributed
-                at least 3 of your own entries.
+                community and track the rankings that celebrate each song’s journey.
+                Editing entries is unlocked after 3 you’ve contributed at least 3 of your own entries.
                 <br><br>
                 Eurovision Songfestival is more than a competition. It's vibrant celebrations of music, culture, and
                 creativity. Each performance tells a story, blending melody, lyrics, and emotion into a unique
