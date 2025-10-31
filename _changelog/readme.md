@@ -1,5 +1,10 @@
 ## Changelog
 
+## 31-10-2025
+
+Vandaag ben ik verder gaan met de top 10 van OWASP. Ook ben ik bezig geweest met het verwijderen van onnodige code (wat
+nog gecomment stond door het proberen van verschillende manieren)
+
 ## 29-10-2025
 
 Ik vandaag heb ik aan de diepere validatie gewerkt. Ik heb ervoor gezorgd dat wanneer je drie keer een artist heb

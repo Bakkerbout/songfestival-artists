@@ -8,6 +8,7 @@ use http\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function Laravel\Prompts\error;
+use Illuminate\Support\Facades\Log;
 
 class ArtistController extends Controller
 {
@@ -167,6 +168,11 @@ class ArtistController extends Controller
         $artist = Artist::findOrFail($id);
 
         if ($user->role !== 1 && $artist->user_id !== $user->id) {
+            Log::alert('Unauthorized artist delete attempt', [
+                'artist_id' => $artist->id,
+                'user_id' => $user->id,
+                'timestamp' => now(),
+            ]);
             abort(403, 'Unauthorized action.');
         }
 
